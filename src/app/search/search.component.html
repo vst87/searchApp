@@ -1,0 +1,34 @@
+<div class="container"> 
+        <form class="form-inline">
+          <div class="form-group search">
+   <input  type="text" class="form-control" placeholder="Search here.." name="searchText" [(ngModel)]="searchText" (input)="getSearchData()">
+          </div>
+    
+          <div class="form-group">
+              <select class="form-control">
+                <option>Hacker News Search</option>
+                <option>Wiki Search</option>
+              </select>
+          </div>
+      </form>
+
+    
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor = "let data of actualData | filter :searchText">
+                <td>{{data.title}}</td>
+                <td>{{data.author}}</td>
+                </tr>
+    
+              </tbody>
+            </table>   
+        
+
+    </div>
+    
